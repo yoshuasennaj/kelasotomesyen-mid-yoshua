@@ -5,18 +5,18 @@ from selenium.webdriver.support import expected_conditions as EC
 CHROME_BINARY_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--start-minimized")
+chrome_options.add_argument("--start-minimized") #set minimize website
 chrome_options.binary_location = CHROME_BINARY_PATH
 
 
 with webdriver.Chrome(options=chrome_options) as driver: # setelah 'with' selesai dieksekusi, otomatis akan memanggil metode quit() 
-# driver = webdriver.Chrome(options=chrome_options) #jika tidak pakai with
+# driver = webdriver.Chrome(options=chrome_options) (jika tidak pakai with)
 
     urls = [
             "https://www.tiket.com",
             "https://www.tokopedia.com",
             "https://www.orangsiber.com",
-            "https://demoqa.com/",
+            "https://demoqa.com",
             "https://automatetheboringstuff.com"
             ]
     try:
@@ -30,5 +30,5 @@ with webdriver.Chrome(options=chrome_options) as driver: # setelah 'with' selesa
     except:
             print(f"Error guys")
 # else:
-#     # jika tidak pakai with
+#     # digunakan jika tidak pakai with, tapi kalau ga pakai quit() tetap ketutup ga sih bang setelah selesai execute hehe
 #     driver.quit()
